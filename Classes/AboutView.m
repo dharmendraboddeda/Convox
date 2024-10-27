@@ -85,20 +85,20 @@ static UICompositeViewDescription *compositeDescription = nil;
 }
 
 - (IBAction)onPolicyTap {
-	NSString *url = @"https://www.linphone.org/privacy-policy";
+	NSString *url = @"https://www.deepijatel.com/privacy-policy";
 	if (![UIApplication.sharedApplication openURL:[NSURL URLWithString:url]]) {
 		LOGE(@"Failed to open %@, invalid URL", url);
 	}
 }
 
 - (IBAction)onLicenceTap {
-	NSString *url = @"https://www.gnu.org/licenses/gpl-3.0.html";
+	NSString *url = @"https://www.deepijatel.com/privacy-policy";
 	if (![UIApplication.sharedApplication openURL:[NSURL URLWithString:url]]) {
 		LOGE(@"Failed to open %@, invalid URL", url);
 	}
 }
 - (IBAction)onTranslateTap {
-	NSString *url = @"https://weblate.linphone.org/projects/linphone-iphone";
+	NSString *url = @"https://www.deepijatel.com/privacy-policy";
 	if (![UIApplication.sharedApplication openURL:[NSURL URLWithString:url]]) {
 		LOGE(@"Failed to open %@, invalid URL", url);
 	}

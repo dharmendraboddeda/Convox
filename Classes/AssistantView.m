@@ -143,13 +143,13 @@ static UICompositeViewDescription *compositeDescription = nil;
     _qrCodeButton.hidden = !ENABLE_QRCODE;
 	[self resetLiblinphone:FALSE];
 	[self enableWelcomeViewButtons];
-	NSString *message = NSLocalizedString(@"I accept Belledonne Communications’ terms of use and privacy policy", nil);
+	NSString *message = NSLocalizedString(@"I accept Deepija Telecom Pvt Ltd’ terms of use and privacy policy", nil);
 	NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:message attributes:@{NSForegroundColorAttributeName : [UIColor systemGrayColor]}];
 	[attributedString addAttribute:NSLinkAttributeName
-						 value:@"https://www.linphone.org/general-terms"
+						 value:@"https://www.deepijatel.com/general-terms"
 						 range:[[attributedString string] rangeOfString:NSLocalizedString(@"terms of use", nil)]];
 	[attributedString addAttribute:NSLinkAttributeName
-						 value:@"https://www.linphone.org/privacy-policy"
+						 value:@"https://www.deepijatel.com/privacy-policy"
 						 range:[[attributedString string] rangeOfString:NSLocalizedString(@"privacy policy", nil)]];
 
 	NSDictionary *linkAttributes = @{NSForegroundColorAttributeName : [UIColor redColor],
@@ -315,7 +315,7 @@ static UICompositeViewDescription *compositeDescription = nil;
 								 @"WIFI or WWAN prior to configure an account.",
 								 nil);
 	if IS(ERROR_PUSH_UNAVAILABLE)
-		return NSLocalizedString(@"Push parameters are not available, and are required in order to create an account through an iPhone.\n Please enable them or create your account on https://subscribe.linphone.org", nil);
+		return NSLocalizedString(@"Push parameters are not available, and are required in order to create an account through an iPhone.\n Please enable them or create your account", nil);
 	
 	if IS(ERROR_AUTH_TOKEN_NOT_RECEIVED)
 		return NSLocalizedString(@"Failed to get an auth token from account manager server", nil);
@@ -597,15 +597,15 @@ static UICompositeViewDescription *compositeDescription = nil;
 		
 		if (!placement_done) {
 			// visibility
-			_welcomeLogoImage.hidden = !show_logo;
-			_gotoLoginButton.hidden = !show_extern;
-			_gotoCreateAccountButton.hidden = !show_new;
-			_gotoRemoteProvisioningButton.hidden = !show_fetch_remote;
+			_welcomeLogoImage.hidden = YES;
+            _gotoLoginButton.hidden = !show_extern;
+            _gotoCreateAccountButton.hidden = YES;
+            _gotoRemoteProvisioningButton.hidden = YES;
 
 			// placement
 			if (show_logo && show_new && !show_extern) {
 				// lower both remaining buttons
-				[_gotoCreateAccountButton setCenter:[_gotoLinphoneLoginButton center]];
+				//[_gotoCreateAccountButton setCenter:[_gotoLinphoneLoginButton center]];
 				[_gotoLoginButton setCenter:[_gotoLoginButton center]];
 
 			} else if (!show_logo && !show_new && show_extern) {
